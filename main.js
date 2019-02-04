@@ -19,7 +19,7 @@ app.set('port', process.env.PORT || 80)
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
-app.use('/public', serveStatic(path.join(__dirname, 'public')))
+app.use('/public', serveStatic(path.join(__dirname, 'lib/public')))
 app.use(cookieParser())
 app.use(expressSession({
   secret: 'my key',
