@@ -10,6 +10,7 @@ const errorHandler = require('errorhandler')
 const expressErrorHandler = require('express-error-handler')
 const cors = require('cors')
 const expressSession = require('express-session')
+const loader = require('./lib/routeloader')
 
 const app = express()
 const router = express.Router()
@@ -27,12 +28,7 @@ app.use(expressSession({
   saveUninitialized: true
 }))
 
-router.route('/').get((req, res) => {
-  console.log(req.ip + ' : portal')
-  res.end("Hello World")
-})
-
-app.use('/', router)
+loader.init(app, router)
 
 const errorhandler = expressErrorHandler({
   static: {
