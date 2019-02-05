@@ -34,7 +34,7 @@ loader.init(app, router)
 
 const errorhandler = expressErrorHandler({
   static: {
-    '404': './public/404.html'
+    '404': './lib/public/404.html'
   }
 })
 
