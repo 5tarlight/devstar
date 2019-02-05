@@ -16,6 +16,8 @@ const app = express()
 const router = express.Router()
 
 app.set('port', process.env.PORT || 80)
+app.set('views', path.join(__dirname, 'lib/routes/views'))
+app.set('view engine', 'pug')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
